@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block body %}
+<br><br><br><br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 offset-md-3">
+            <h2>Registration</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 offset-md-3">
+            <hr>
+            <form method="POST" action="{% url 'signup:registration' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+{#                <div class="form-group">#}
+{#                    <label>Username:</label>#}
+{#                    <input style="margin-bottom: 10px;" type="text" class="personal-data form-control" name="login" placeholder="login" required>#}
+{#                    <label>Email:</label>#}
+{#                    <input style="margin-bottom: 10px;" type="email" class="personal-data form-control" name="email" placeholder="email" required>#}
+{#                    <label>Firstname:</label>#}
+{#                    <input style="margin-bottom: 10px;" type="text" class="personal-data form-control" name="firstname" placeholder="first name" required>#}
+{#                    <label>Password:</label>#}
+{#                    <input style="margin-bottom: 10px;" type="password" class="personal-data form-control" name="password1" placeholder="password" required>#}
+{#                    <label>Password:</label>#}
+{#                    <input style="margin-bottom: 10px;" type="password" class="personal-data form-control" name="password2" placeholder="password" required>#}
+{#                </div>#}
+                <div class="row">
+                    <div class="col-sm-6"><button type="submit" class="btn btn-outline-success my-2 my-sm-0" >Registration</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
